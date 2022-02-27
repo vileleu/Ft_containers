@@ -6,7 +6,7 @@
 #    By: vico <vico@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/27 22:14:59 by vico              #+#    #+#              #
-#    Updated: 2022/02/27 19:37:34 by vico             ###   ########.fr        #
+#    Updated: 2022/02/27 20:58:44 by vico             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,14 @@ OBJS_S		= ${SRCS_S:.cpp=.o}
 
 NAME_S		= stack
 
+SRCS_FT		= $(wildcard tests/ft_map_test.cpp tests/ft_pair_test.cpp tests/ft_stack_test.cpp tests/ft_vector_test.cpp tests/main_ft_tests.cpp)
+
+SRCS_STD	= $(wildcard tests/std_map_test.cpp tests/std_pair_test.cpp tests/std_stack_test.cpp tests/std_vector_test.cpp tests/main_std_tests.cpp)
+
+OBJS_FT		= ${SRCS_FT:.cpp=.o}
+
+OBJS_STD	= ${SRCS_STD:.cpp=.o}
+
 HEADERS		= -I ./includes/utils -I ./includes/vector -I ./includes/map -I ./includes/stack
 
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
@@ -44,7 +52,19 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 %.o: %.cpp
 			@clang++ $(CXXFLAGS) $(HEADERS) -c -o $@ $<
 
-all:		 ${NAME_V} ${NAME_M} ${NAME_S}
+all:		 ft_test std_test
+
+ft_test:	${OBJS_FT}
+			@printf "\n$(BLUE)"
+			@printf "$(BLUE)Compiling files..."
+			@clang++ ${CXXFLAGS} ${OBJS_FT} $(HEADERS) -o ft_test
+			@printf "$(GREEN)[ft_test done][✔]$(RESET)\n"
+
+std_test:	${OBJS_STD}
+			@printf "\n$(BLUE)"
+			@printf "$(BLUE)Compiling files..."
+			@clang++ ${CXXFLAGS} ${OBJS_STD} $(HEADERS) -o std_test
+			@printf "$(GREEN)[std_test done][✔]$(RESET)\n"
 
 ${NAME_V}:	${OBJS_V}
 			@printf "\n$(BLUE)"
@@ -67,15 +87,15 @@ ${NAME_S}:	${OBJS_S}
 clean:
 			@printf "\n"
 			@printf "$(RED)Erase files '.o'\n"
-			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S)
+			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S) ${OBJS_T}
 			@printf "$(RESET)\n"
 
 fclean:
 			@printf "\n"
 			@printf "$(RED)Erase files '.o'\n"
-			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S)
+			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S) $(OBJS_T)
 			@printf "$(RED)Delete executable file and libft\n"
-			@rm -rf $(NAME_V) $(NAME_M) $(NAME_S)
+			@rm -rf $(NAME_V) $(NAME_M) $(NAME_S) $(NAME_T) std_test ft_test
 			@printf "$(RESET)\n"
 
 re:			fclean all
