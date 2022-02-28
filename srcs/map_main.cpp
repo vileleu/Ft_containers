@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 18:05:27 by vico              #+#    #+#             */
-/*   Updated: 2022/02/28 03:43:49 by vico             ###   ########.fr       */
+/*   Updated: 2022/02/28 04:26:52 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #define TYPE1 int
 #define TYPE2 char
-#define NAMESPACE ft
+#define NAMESPACE std
 
 void	print_map(NAMESPACE::map<TYPE1, TYPE2> mp)
 {
@@ -120,7 +120,7 @@ int		main()
 	{
 		for (NAMESPACE::map<TYPE1, TYPE2>::iterator it(me.begin()); it != me.end(); it++)
 			std::cout << "first = " << it->first << ", second = " << it->second << std::endl;
-		std::cout << "AFTER ERASE" << std::endl;
+		std::cout << "AstdER ERASE" << std::endl;
 		me.erase(10);
 		me.erase(7);
 		for (NAMESPACE::map<TYPE1, TYPE2>::iterator it(me.begin()); it != me.end(); it++)
@@ -139,7 +139,7 @@ int		main()
 		for (NAMESPACE::map<TYPE1, TYPE2>::iterator it(oth.begin()); it != oth.end(); it++)
 			std::cout << "first = " << it->first << ", second = " << it->second << std::endl;
 		me.swap(oth);
-		std::cout << "AFTER SWAP" << std::endl;
+		std::cout << "AstdER SWAP" << std::endl;
 		for (NAMESPACE::map<TYPE1, TYPE2>::iterator it(me.begin()); it != me.end(); it++)
 			std::cout << "first = " << it->first << ", second = " << it->second << std::endl;
 		std::cout << std::endl;
@@ -156,7 +156,7 @@ int		main()
 		std::cout << "size = " << me.size() << std::endl;
 		for (NAMESPACE::map<TYPE1, TYPE2>::iterator it(me.begin()); it != me.end(); it++)
 			std::cout << "first = " << it->first << ", second = " << it->second << std::endl;
-		std::cout << "AFTER CLEAR" << std::endl;
+		std::cout << "AstdER CLEAR" << std::endl;
 		me.clear();
 		std::cout << "size = " << me.size() << std::endl;
 		for (NAMESPACE::map<TYPE1, TYPE2>::iterator it(me.begin()); it != me.end(); it++)

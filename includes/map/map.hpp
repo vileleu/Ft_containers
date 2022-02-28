@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:28:41 by vico              #+#    #+#             */
-/*   Updated: 2022/02/28 03:42:27 by vico             ###   ########.fr       */
+/*   Updated: 2022/02/28 04:28:07 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ namespace ft
 		iterator	insert(iterator position, const value_type& val)
 		{
 			_tree.insert(val);
-			position = find(val.first);
+			position = iterator(_tree.find(val.first), _tree.getRoot(), _comp);
 			return (position);
 		}
 		template <class InputIterator>
