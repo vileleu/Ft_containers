@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:28:41 by vico              #+#    #+#             */
-/*   Updated: 2022/02/24 12:13:32 by vico             ###   ########.fr       */
+/*   Updated: 2022/02/28 03:42:27 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,7 @@ namespace ft
 		// Element access
 		mapped_type&	operator[](const key_type& k)
 		{
-			return (*((this->insert(ft::make_pair(k,mapped_type()))).first)).second;
+			return (*((this->insert(ft::make_pair(k, mapped_type()))).first)).second;
 		}
 		// Modifiers
 		ft::pair<iterator, bool>	insert(const value_type& val)
@@ -161,11 +161,11 @@ namespace ft
 			size_type					len(size());
 
 			_tree.insert(val);
+			tmp.first = iterator(_tree.find(val.first), _tree.getRoot(), _comp);
 			if (len == size())
 				tmp.second = false;
 			else
 				tmp.second = true;
-			tmp.first = find(val.first);
 			return tmp;
 		}
 		iterator	insert(iterator position, const value_type& val)

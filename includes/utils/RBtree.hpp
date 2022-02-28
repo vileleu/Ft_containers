@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 15:24:07 by vico              #+#    #+#             */
-/*   Updated: 2022/02/24 12:20:29 by vico             ###   ########.fr       */
+/*   Updated: 2022/02/28 02:49:38 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ namespace ft
 			tmp->right = rot;
 			rot->parent = tmp;
 		}
-		void insertBalancing(nodePtr check)
+		void	insertBalancing(nodePtr check)
 		{
 	    	nodePtr	tmp(NULL);
 
@@ -389,7 +389,7 @@ namespace ft
 				node = node->right;
 			return node;
 		}
-		void insert(const value_type &elem)
+		void	insert(const value_type &elem)
 		{
 	    	nodePtr	tmp(newNode(elem));
 	    	nodePtr	y(NULL);
@@ -495,6 +495,21 @@ namespace ft
 			x._root = tmp_root;
 			x._sentinel = tmp_sent;
 			x._size = tmp_size;
+		}
+		nodePtr	find(const key_type &key)
+		{
+			nodePtr	tmp(_root);
+
+			while (tmp != _sentinel)
+			{
+				if (key == tmp->data.first)
+					return tmp;
+				if (_comp(key, tmp->data.first))
+					tmp = tmp->left;
+				else
+					tmp = tmp->right;
+			}
+			return tmp;
 		}
 		void	clear()
 		{

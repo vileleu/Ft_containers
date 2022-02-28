@@ -6,14 +6,14 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 07:50:34 by yun               #+#    #+#             */
-/*   Updated: 2022/02/27 21:13:19 by vico             ###   ########.fr       */
+/*   Updated: 2022/02/28 03:41:29 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.hpp"
 #include <iostream>
 #include <string>
-#include "../includes/map/map.hpp"
+#include "map.hpp"
 
 #define NC "\e[0m"
 #define RD "\e[0;31m"
@@ -302,8 +302,8 @@ int ft_map_test()
         std::cout<<"-----------------------------------"<<std::endl;
 		std::cout<<"[TEST "<<RD"4"<<NC"]- Map time exec"<<std::endl<<std::endl;
         ft::map<int, int> ft_map;
-        std::cout<<CYN"Insert 1000 element"NC<<std::endl;
-        for (int i = 0; i < 1000; i++)
+        std::cout<<CYN"Insert 1000000 element"NC<<std::endl;
+        for (int i = 0; i < 1000000; i++)
             ft_map.insert(ft::make_pair<int, int>(i, i));
         std::cout<<CYN"End Insert"NC<<std::endl;
         std::cout<<CYN"insert(InputIterator first, InputIterator last)"NC<<std::endl;

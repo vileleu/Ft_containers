@@ -6,12 +6,12 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 07:42:55 by yun               #+#    #+#             */
-/*   Updated: 2022/02/27 20:17:17 by vico             ###   ########.fr       */
+/*   Updated: 2022/02/28 03:39:24 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/utils/utils.hpp"
-#include "../includes/utils/reverse_iterator.hpp"
+#include "utils.hpp"
+#include "reverse_iterator.hpp"
 #include <vector>
 #include <iostream>
 #include <string>

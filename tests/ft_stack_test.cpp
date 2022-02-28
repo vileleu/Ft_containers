@@ -6,11 +6,11 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 10:12:29 by yun               #+#    #+#             */
-/*   Updated: 2022/02/27 20:17:40 by vico             ###   ########.fr       */
+/*   Updated: 2022/02/28 03:39:33 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/stack/stack.hpp"
+#include "stack.hpp"
 #include "tests.hpp"
 #include <iostream>
 #include <string>

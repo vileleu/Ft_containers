@@ -6,7 +6,7 @@
 #    By: vico <vico@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/27 22:14:59 by vico              #+#    #+#              #
-#    Updated: 2022/02/27 20:58:44 by vico             ###   ########.fr        #
+#    Updated: 2022/02/28 03:44:55 by vico             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,13 +87,13 @@ ${NAME_S}:	${OBJS_S}
 clean:
 			@printf "\n"
 			@printf "$(RED)Erase files '.o'\n"
-			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S) ${OBJS_T}
+			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S) $(OBJS_FT) $(OBJS_STD)
 			@printf "$(RESET)\n"
 
 fclean:
 			@printf "\n"
 			@printf "$(RED)Erase files '.o'\n"
-			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S) $(OBJS_T)
+			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S) $(OBJS_FT) $(OBJS_STD)
 			@printf "$(RED)Delete executable file and libft\n"
 			@rm -rf $(NAME_V) $(NAME_M) $(NAME_S) $(NAME_T) std_test ft_test
 			@printf "$(RESET)\n"

@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 07:50:40 by yun               #+#    #+#             */
-/*   Updated: 2022/02/27 21:13:20 by vico             ###   ########.fr       */
+/*   Updated: 2022/02/28 02:31:30 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -300,8 +300,8 @@ int std_map_test()
         std::cout<<"-----------------------------------"<<std::endl;
 		std::cout<<"[TEST "<<RD"4"<<NC"]- Map time exec"<<std::endl<<std::endl;
         std::map<int, int> std_map;
-        std::cout<<CYN"Insert 1000 element"NC<<std::endl;
-        for (int i = 0; i < 1000; i++)
+        std::cout<<CYN"Insert 1000000 element"NC<<std::endl;
+        for (int i = 0; i < 1000000; i++)
             std_map.insert(std::make_pair<int, int>(i, i));
         std::cout<<CYN"End Insert"NC<<std::endl;
         std::cout<<CYN"insert(InputIterator first, InputIterator last)"NC<<std::endl;
