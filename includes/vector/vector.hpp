@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 19:08:07 by vico              #+#    #+#             */
-/*   Updated: 2022/02/26 18:28:38 by vico             ###   ########.fr       */
+/*   Updated: 2022/03/01 02:42:43 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ namespace ft
 		{
 			clear();
 			_alloc.deallocate(_array, _capacity);
-			_capacity = x.size();
+			if (x.size() > _capacity)
+				_capacity = x.size();
 			_size = x.size();
 			_array = _alloc.allocate(_capacity);
 			for (size_type i(0); i < _size; i++)
@@ -284,8 +285,12 @@ namespace ft
 			pointer			tmp(NULL);
 
 			tmp = _alloc.allocate(len);
-			if (_size + n > _capacity)
+			if (!_capacity)
 				reserve(_size + n);
+			else if (_size + n > _size * 2)
+				reserve(_size + n);
+			else if (_size + n > _capacity)
+				reserve(_size * 2);
 			for (size_type i(start); i < _size; i++)
 			{
 				_alloc.construct(&tmp[i - start], _array[i]);
@@ -324,8 +329,12 @@ namespace ft
 			pointer			tmp(NULL);
 
 			tmp = _alloc.allocate(len);
-			if (_size + n > _capacity)
+			if (!_capacity)
 				reserve(_size + n);
+			else if (_size + n > _size * 2)
+				reserve(_size + n);
+			else if (_size + n > _capacity)
+				reserve(_size * 2);
 			for (size_type i(start); i < _size; i++)
 			{
 				_alloc.construct(&tmp[i - start], _array[i]);

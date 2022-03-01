@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:28:41 by vico              #+#    #+#             */
-/*   Updated: 2022/02/28 04:28:07 by vico             ###   ########.fr       */
+/*   Updated: 2022/02/28 19:52:36 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -317,7 +317,11 @@ namespace ft
 			return _alloc;
 		}
 	};
-
+	template <class Key, class T, class Compare, class Alloc>
+	void swap(map<Key, T, Compare, Alloc> &lhs, map<Key, T, Compare, Alloc> &rhs)
+	{
+		lhs.swap(rhs);
+	}
 	template <class Key, class T, class Compare, class Alloc>
 	bool	operator==(const map<Key, T, Compare, Alloc>& lhs, const map<Key, T, Compare, Alloc>& rhs)
 	{
