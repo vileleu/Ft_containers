@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 07:50:40 by yun               #+#    #+#             */
-/*   Updated: 2022/02/28 02:31:30 by vico             ###   ########.fr       */
+/*   Updated: 2022/05/30 22:05:23 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,11 +192,11 @@ int std_map_test()
         std_map_it.swap(std_map_cpy);
         std::cout<<"std_map_cpy "<<std_map_cpy.size()<< " "<<std_map_cpy.max_size()<<std::endl;
         std::cout<<"std_map_it "<<std_map_it.size()<< " "<<std_map_it.max_size()<<std::endl;
-        std::cout<<"std_map_it astder: ";
+        std::cout<<"std_map_it after: ";
         for (std::map<std::string, std::string>::iterator it = std_map_it.begin(); it != std_map_it.end(); it++)
             std::cout<<"["<<it->first<<", "<<it->second<<"] ";
         std::cout<<std::endl;
-        std::cout<<"std_map_cpy astder: ";
+        std::cout<<"std_map_cpy after: ";
         for (std::map<std::string, std::string>::iterator it = std_map_cpy.begin(); it != std_map_cpy.end(); it++)
             std::cout<<"["<<it->first<<", "<<it->second<<"] ";
         std::cout<<std::endl<<std::endl;

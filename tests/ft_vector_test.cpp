@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 06:44:58 by yun               #+#    #+#             */
-/*   Updated: 2022/02/28 03:39:38 by vico             ###   ########.fr       */
+/*   Updated: 2022/05/30 22:13:52 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -259,14 +259,13 @@ int	ft_vector_test()
 			std::cout<<" "<<*ft_it_int;
 		std::cout<<std::endl<<std::endl;
 	}
-
 	{
 		ft::vector<std::string> ft_vector_str(8);
 		ft::vector<std::string> ft_vector_operator;
 		ft::vector<std::string>::const_iterator	ft_it_str;
 		ft::vector<std::string>::const_iterator	ft_ite_str;
 
-		std::cout<<"[TEST "<<RD"2"<<NC"]- Vector constructor && operator ="<<std::endl<<std::endl;
+		std::cout<<"[TEST "<<RD"2"<<NC"]- Operator && Copy constructor && Iterator constructor"<<std::endl<<std::endl;
 
 		ft_vector_str.push_back("First");
 		ft_vector_str.push_back("Second");

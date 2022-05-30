@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 03:57:30 by vico              #+#    #+#             */
-/*   Updated: 2022/03/01 02:52:46 by vico             ###   ########.fr       */
+/*   Updated: 2022/05/30 21:40:33 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 
 #define TYPE int
-#define NAMESPACE ft
+#define NAMESPACE std
 
 void	print_vec(NAMESPACE::vector<TYPE> vec)
 {
