@@ -58,12 +58,16 @@ ft_test:	${OBJS_FT}
 			@printf "\n$(BLUE)"
 			@printf "$(BLUE)Compiling files..."
 			@clang++ ${CXXFLAGS} ${OBJS_FT} $(HEADERS) -o ft_test
+			@./ft_test > ft.txt
+			@sed -i -e 's/\(std\|ft\)//g' ft.txt
 			@printf "$(GREEN)[ft_test done][✔]$(RESET)\n"
 
 std_test:	${OBJS_STD}
 			@printf "\n$(BLUE)"
 			@printf "$(BLUE)Compiling files..."
 			@clang++ ${CXXFLAGS} ${OBJS_STD} $(HEADERS) -o std_test
+			@./std_test > std.txt
+			@sed -i -e 's/\(std\|ft\)//g' std.txt
 			@printf "$(GREEN)[std_test done][✔]$(RESET)\n"
 
 ${NAME_V}:	${OBJS_V}
@@ -87,13 +91,13 @@ ${NAME_S}:	${OBJS_S}
 clean:
 			@printf "\n"
 			@printf "$(RED)Erase files '.o'\n"
-			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S) $(OBJS_FT) $(OBJS_STD)
+			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S) $(OBJS_FT) $(OBJS_STD) ft.txt std.txt
 			@printf "$(RESET)\n"
 
 fclean:
 			@printf "\n"
 			@printf "$(RED)Erase files '.o'\n"
-			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S) $(OBJS_FT) $(OBJS_STD)
+			@rm -rf $(OBJS_V) $(OBJS_M) $(OBJS_S) $(OBJS_FT) $(OBJS_STD) ft.txt std.txt
 			@printf "$(RED)Delete executable file and libft\n"
 			@rm -rf $(NAME_V) $(NAME_M) $(NAME_S) $(NAME_T) std_test ft_test
 			@printf "$(RESET)\n"
