@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/26 07:50:34 by yun               #+#    #+#             */
+/*   Created: 2022/02/26 07:50:34 by vico              #+#    #+#             */
 /*   Updated: 2022/02/28 03:41:29 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -121,8 +121,8 @@ int ft_map_test()
         ft::map<std::string, int>::iterator it1 = ft_map.find("pkevin");
         ft::map<std::string, int>::iterator it2 = ft_map.find("yolo");
 
-        std::cout<<"ft_val_cmp(pkevin, yolo): "<<ft_val_cmp(*it1, *it2)<<std::endl;
-        std::cout<<"ft_val_cmp(yolo, pkevin): "<<ft_val_cmp(*it2, *it1)<<std::endl<<std::endl;
+        std::cout<<"ft_value_cmp(pkevin, yolo): "<<ft_val_cmp(*it1, *it2)<<std::endl;
+        std::cout<<"ft_value_cmp(yolo, pkevin): "<<ft_val_cmp(*it2, *it1)<<std::endl<<std::endl;
 
         std::cout<<"----------------------------------"<<std::endl;
 		std::cout<<"[TEST "<<RD"2"<<NC"]- Map iterator"<<std::endl<<std::endl;

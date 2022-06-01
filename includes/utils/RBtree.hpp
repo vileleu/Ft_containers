@@ -71,21 +71,6 @@ namespace ft
 			node->parent = NULL;
 			_alloc.deallocate(node, 1);
 		}
-		void	printNode(nodePtr node) const
-		{
-			if (node == NULL || node == _sentinel)
-				return ;
-			printNode(node->left);
-			printNode(node->right);
-			std::cout << "key = " << node->data.first << ", data = " << node->data.second << ", color = " << (node->color ? "RED" : "BLACK");
-			std::cout << ", parent = ";
-			if (node->parent != NULL)
-				std::cout << node->parent->data.first;
-			else
-				std::cout << "no parent";
-			std::cout << std::endl;
-			
-		}
 		nodePtr	newNode(const value_type& elem)
 		{
 			nodePtr	tmp;
@@ -516,10 +501,6 @@ namespace ft
 			deleteAllNode(_root);
 			_root = _sentinel;
 			_size = 0;
-		}
-		void	print() const
-		{
-			printNode(_root);
 		}
 	};
 }
